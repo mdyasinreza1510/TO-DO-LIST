@@ -8,8 +8,42 @@ list-style-type:circle;
 body{
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 .main-container{
   background-color: aqua;
+  width: 80vh;
   height: 80vh;
+
+}
+.heading{
+  margin-bottom: 30px;
+  font-size: 25px;
+  background-color: red;
+}
+.input-box{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: green;
+}
+input{
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0px 10px 0px 10px;
+  height: 100%;
+  width: 50%;
+  outline: none;
+  border-radius: 20px;
+}
+.adbtn{
+  margin-left: 30px;
+  height: 80%;
+  width: 100px;
+  border-radius: 20px;
+  border: none;
+}
+.list-box{
+  background-color: purple;
 }
