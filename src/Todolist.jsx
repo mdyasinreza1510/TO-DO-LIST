@@ -1,7 +1,7 @@
 import { useState } from 'react'
 function Todolist(){
 
-    const [tasks, setatsk]=useState(["eat","sleep", "code","repeat","gaming",""]);
+    const [tasks, setatsk]=useState(["eat","sleep", "code","repeat","gaming"]);
     const [newtask,setnewtask]=useState("");
 
     function inputchange(event){
