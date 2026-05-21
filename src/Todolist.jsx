@@ -1,7 +1,7 @@
 import { useState } from 'react'
 function Todolist(){
 
-    const [tasks, setatsk]=useState(["eat","sleep", "code","repeat"]);
+    const [tasks, setatsk]=useState(["eat","sleep", "code","repeat","gaming",""]);
     const [newtask,setnewtask]=useState("");
 
     function inputchange(event){
@@ -41,10 +41,14 @@ function Todolist(){
     <ol>
         {tasks.map((task, index)=>
         <li key={index}>
-            <span>{task}</span>
-            <button onClick={dlttask}>Delet</button>
+            <div className="task-box">
+            <div className="task"><p>{task}</p></div>
+            <div className="action-btns">            <button onClick={dlttask}>Delet</button>
             <button onClick={movetaskup}>Up</button>
-            <button onClick={movetaskdown}>Down</button>
+            <button onClick={movetaskdown}>Down</button></div>
+
+            </div>
+          
 
         </li>
         )}
