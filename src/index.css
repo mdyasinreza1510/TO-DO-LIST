@@ -17,6 +17,10 @@ background: linear-gradient(to top, #434343, #000000);
   height: 100vh;
 }
 .main-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: 50px;
  text-align: center;
   /* background-color: aqua; */
@@ -65,16 +69,21 @@ input{
   margin-top: 20px;
   overflow: scroll;
   height: 500px;
-padding-bottom: 20px;
+  width: 350px;
+  padding-bottom: 20px;
   box-sizing: border-box;
   /* background-color: purple; */
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 2px solid #FFFADC;
+  border-radius: 20px;
+
   
   
 }
 .task-box{
+  overflow: scroll;
   border: 1px solid #B6F500;
   color: #FFFADC;
   box-sizing: border-box;
@@ -91,7 +100,21 @@ padding-bottom: 20px;
   border-radius: 10px;
 }
 .task-box p{
-  font-size: 40px;
+  font-size: 25px;
 
+
+}
+.action-btns{
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+}
+button{
+  color: #FFFADC;
+  border: none;
+  background: transparent;
+  height: 25px;
+  width: 25px;
 
 }

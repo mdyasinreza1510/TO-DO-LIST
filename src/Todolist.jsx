@@ -1,15 +1,21 @@
 import { useState } from 'react'
+import { FaTrash, FaArrowUp, FaArrowDown } from "react-icons/fa";
 function Todolist(){
 
-    const [tasks, settask]=useState(["eat","sleep", "code"]);
+    const [tasks, settask]=useState([]);
+    //ye hamara main task hai jo show hoga page pe
     const [newtask,setnewtask]=useState("");
+    //ye hamara cretaing task hai jo input se value lekr uper wale "tasks" me add krega
 
     function inputchange(event){
        setnewtask( event.target.value);
-
+/*yaha input change me hmne input k value ko acces kiya hai aur 
+setnewtask k zariya jo value input se liya usko newtask ki value me add krdiya*/
     }
 
     function addtask(){
+        /*ab newtask me jo value add hua hai usko add btn click hone pe settask settr ko use krke main 
+        "tasks" jo page me show hoga waha add rdenge aur input ki vale ko empty krdenge*/
         if (newtask !==""){
         settask([...tasks, newtask]);
         setnewtask("");
@@ -54,8 +60,8 @@ function Todolist(){
     <h1>TO-DO-LIST</h1>
 </div>
 <div className='input-box'>
-    <input 
-    type="text"
+    <input
+    type="text" 
     placeholder='Enter new task....' 
     value={newtask}
     onChange={inputchange}/>
@@ -67,10 +73,17 @@ function Todolist(){
         {tasks.map((task, index)=>
         <li key={index}>
             <div className="task-box">
+
             <div className="task"><p>{task}</p></div>
-            <div className="action-btns">            <button onClick={()=>{dlttask(index)}}>Delet</button>
-            <button onClick={() =>{movetaskup(index)}}>Up</button>
-            <button onClick={() => {movetaskdown(index)}}>Down</button></div>
+            
+            <div className="action-btns">  
+
+                <button onClick={()=>{dlttask(index)}}><FaTrash  className='icons' /></button>
+            
+            <button onClick={() =>{movetaskup(index)}}><FaArrowUp  className='icons'/></button>
+            
+            <button onClick={() => {movetaskdown(index)}}><FaArrowDown className='icons'/></button>
+            </div>
 
             </div>
           
