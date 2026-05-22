@@ -30,13 +30,20 @@ function Todolist(){
                     const updatedtask=[...tasks];
 
         [updatedtask[index], updatedtask[index-1]] = [updatedtask[index-1], updatedtask[index]];
-        
+
         settask(updatedtask);
         }
 
         
     }
     function movetaskdown(index){
+                if (index < tasks.length -1){
+                    const updatedtask=[...tasks];
+
+        [updatedtask[index], updatedtask[index+1]] = [updatedtask[index+1], updatedtask[index]];
+        
+        settask(updatedtask);
+        }
         
     }
     return(
@@ -63,7 +70,7 @@ function Todolist(){
             <div className="task"><p>{task}</p></div>
             <div className="action-btns">            <button onClick={()=>{dlttask(index)}}>Delet</button>
             <button onClick={() =>{movetaskup(index)}}>Up</button>
-            <button onClick={movetaskdown}>Down</button></div>
+            <button onClick={() => {movetaskdown(index)}}>Down</button></div>
 
             </div>
           
