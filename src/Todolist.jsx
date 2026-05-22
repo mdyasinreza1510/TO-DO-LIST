@@ -1,7 +1,7 @@
 import { useState } from 'react'
 function Todolist(){
 
-    const [tasks, setatsk]=useState(["eat","sleep", "code","repeat","gaming"]);
+    const [tasks, settask]=useState(["eat","sleep", "code"]);
     const [newtask,setnewtask]=useState("");
 
     function inputchange(event){
@@ -10,12 +10,30 @@ function Todolist(){
     }
 
     function addtask(){
+        if (newtask !==""){
+        settask([...tasks, newtask]);
+        setnewtask("");
+        }
+        else{
+            alert("enter a task first");
+        }
+
 
     }
     function dlttask(index){
+        const dltdtask= tasks.filter((_, i) => i!== index);
+        settask(dltdtask);
         
     }
-    function movetaskup(){
+    function movetaskup(index){
+        if (index > 0){
+                    const updatedtask=[...tasks];
+
+        [updatedtask[index], updatedtask[index-1]] = [updatedtask[index-1], updatedtask[index]];
+        
+        settask(updatedtask);
+        }
+
         
     }
     function movetaskdown(index){
@@ -43,8 +61,8 @@ function Todolist(){
         <li key={index}>
             <div className="task-box">
             <div className="task"><p>{task}</p></div>
-            <div className="action-btns">            <button onClick={dlttask}>Delet</button>
-            <button onClick={movetaskup}>Up</button>
+            <div className="action-btns">            <button onClick={()=>{dlttask(index)}}>Delet</button>
+            <button onClick={() =>{movetaskup(index)}}>Up</button>
             <button onClick={movetaskdown}>Down</button></div>
 
             </div>
