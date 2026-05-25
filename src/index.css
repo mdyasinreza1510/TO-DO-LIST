@@ -7,7 +7,7 @@ list-style-type:none;
 scrollbar-width: none;
 }
 body{
-  background: #000000;
+background: #000000;
 background: -webkit-linear-gradient(to top, #434343, #000000);   
 background: linear-gradient(to top, #434343, #000000); 
 
